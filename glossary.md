@@ -38,6 +38,18 @@ From the [`xcm-format`](https://github.com/paritytech/xcm-format) specification:
 > may be many such accounts or just one. If many, then this assumes and identifies a unique primary
 > account.
 
+## System Chain
+
+A system chain is a parachain which acts as an extension of the relay chain.
+
+Notice that relay chains like Kusama and Polkadot have many functionalities beyond simply managing
+parachains. Things like governance, balances, staking, identity, and more. Ideally all of these
+functions will be migrated to system chains which are dedicated parachains which will offload these
+functions from the relay chain.
+
+It is important to note that system chains do not have any of their own token economics or sovreignty. They use
+the token and governance of the relay chain, and should basically be considered the same chain.
+
 ## Teleported Asset
 
 A teleport is a specific kind of asset transfer where assets are completely removed from one

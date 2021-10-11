@@ -5,42 +5,6 @@ In this example, we will do a transfer on the relay chain initiated by a paracha
 Of course we could always call the `transfer` function of the balances pallet, but here we can
 observe how the **holding register** is used.
 
-To observe inside of the XCM Executor, you need to slightly modify the `fn process_instruction`
-function.
-
-<details>
-    <summary>Show/Hide Diff</code></summary>
-
-```diff
-diff --git a/xcm/xcm-executor/src/lib.rs b/xcm/xcm-executor/src/lib.rs
-index f252b2e7e..02503e4d2 100644
---- a/xcm/xcm-executor/src/lib.rs
-+++ b/xcm/xcm-executor/src/lib.rs
-@@ -231,7 +231,9 @@ impl<Config: config::Config> XcmExecutor<Config> {
-
-    /// Process a single XCM instruction, mutating the state of the XCM virtual machine.
-    fn process_instruction(&mut self, instr: Instruction<Config::Call>) -> Result<(), XcmError> {
--       match instr {
-+       println!("instruction: {:?}", instr);
-+       println!("holding before: {:?}", self.holding);
-+       let result = match instr {
-            WithdrawAsset(assets) => {
-                // Take `assets` from the origin account (on-chain) and place in holding.
-                let origin = self.origin.as_ref().ok_or(XcmError::BadOrigin)?;
-@@ -455,7 +457,10 @@ impl<Config: config::Config> XcmExecutor<Config> {
-            HrmpNewChannelOpenRequest { .. } => Err(XcmError::Unimplemented),
-            HrmpChannelAccepted { .. } => Err(XcmError::Unimplemented),
-            HrmpChannelClosing { .. } => Err(XcmError::Unimplemented),
--       }
-+       };
-+
-+       println!("holding after: {:?} \n", self.holding);
-+       result
-    }
-
-    fn reanchored(mut assets: Assets, dest: &MultiLocation) -> Result<MultiAssets, XcmError> {
-```
-
 </details>
 
 What we want to see in this example is that through the process of transferring funds via XCM, we

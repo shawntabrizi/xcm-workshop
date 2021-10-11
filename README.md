@@ -3,8 +3,17 @@
 This is an interactive workshop walking your through Polkadot's XCM (cross-consensus messages) and
 XCMP (cross-chain message passing).
 
-This workshop will show you how to construct and send messages across Parachains and the Relay Chain
-on Polkadot.
+The XCM implementation is built on top of many layers of abstractions and configurations. In order
+to understand how XCM works, you will need to jump between the XCM format, the XCM Executor, XCM
+Builder, XCM Configuration and more!
+
+This workshop will walk you through those points and peel the layers of the onion.
+
+We will focus on the 3 main types of balance transfers:
+
+* A simple single chain transfer initiated by a parachain.
+* A reserve backed transfer from the relay chain to a parachain.
+* A teleport transfer from the relay chain to a trusted system chain.
 
 ## Resources
 
