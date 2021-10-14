@@ -22,16 +22,17 @@ of another parachain.
 
 ## Example
 
-Transferring a reserve asset to another parachain. [Source in `pallet-xcm`.](https://github.com/paritytech/polkadot/blob/master/xcm/pallet-xcm/src/lib.rs#L600)
+Transferring a reserve asset to another parachain. [Source in
+`pallet-xcm`.](https://github.com/paritytech/polkadot/blob/master/xcm/pallet-xcm/src/lib.rs#L600)
 
 ```rust
 let mut message = Xcm(vec![TransferReserveAsset {
-	assets,
-	dest,
-	xcm: Xcm(vec![
-		BuyExecution { fees, weight_limit: Unlimited },
-		DepositAsset { assets: Wild(All), max_assets, beneficiary },
-	]),
+    assets,
+    dest,
+    xcm: Xcm(vec![
+        BuyExecution { fees, weight_limit: Unlimited },
+        DepositAsset { assets: Wild(All), max_assets, beneficiary },
+    ]),
 }]);
 ```
 

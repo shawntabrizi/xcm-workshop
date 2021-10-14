@@ -3,7 +3,8 @@
 To complete the reserve asset transfer, we need to trigger the appropriate logic on the parachain to
 mint that reserve asset.
 
-As mentioned earlier, we recieve the XCM from the DMP queue with the origin `Parent`. At this point, the XCM has the following instructions:
+As mentioned earlier, we recieve the XCM from the DMP queue with the origin `Parent`. At this point,
+the XCM has the following instructions:
 
 ```rust
 Xcm([
@@ -45,9 +46,9 @@ etc:
 /// Accepts an asset iff it is a native asset.
 pub struct NativeAsset;
 impl FilterAssetLocation for NativeAsset {
-	fn filter_asset_location(asset: &MultiAsset, origin: &MultiLocation) -> bool {
-		matches!(asset.id, Concrete(ref id) if id == origin)
-	}
+    fn filter_asset_location(asset: &MultiAsset, origin: &MultiLocation) -> bool {
+        matches!(asset.id, Concrete(ref id) if id == origin)
+    }
 }
 ```
 

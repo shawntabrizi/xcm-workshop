@@ -47,8 +47,9 @@ parachains. Things like governance, balances, staking, identity, and more. Ideal
 functions will be migrated to system chains which are dedicated parachains which will offload these
 functions from the relay chain.
 
-It is important to note that system chains do not have any of their own token economics or sovreignty. They use
-the token and governance of the relay chain, and should basically be considered the same chain.
+It is important to note that system chains do not have any of their own token economics or
+sovreignty. They use the token and governance of the relay chain, and should basically be considered
+the same chain.
 
 ## Teleported Asset
 
