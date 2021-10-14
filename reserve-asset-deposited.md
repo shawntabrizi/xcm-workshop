@@ -67,3 +67,6 @@ parachain XCM Executor.
 
 The next instruction is `ClearOrigin` which is important since the sender defines all the subsequent
 instructions, and it could be an elevation of privledges to keep the origin around.
+
+After that, the steps of `BuyExecution` and `DepositAsset` are the same as from the original simple
+transfer.

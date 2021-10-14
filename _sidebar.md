@@ -1,6 +1,7 @@
 * [Home](/)
 * [XCM Instructions](instructions.md)
 * [XCM Executor](executor.md)
+* [XCM Config](config.md)
 * [Simple Transfer Example](simple-transfer.md)
 * [Barrier](barrier.md)
 * [Buy Execution](buy-execution.md)
