@@ -1,13 +1,12 @@
 * [Home](/)
-* [Setup](setup.md)
 * [XCM Instructions](instructions.md)
 * [XCM Executor](executor.md)
 * [Simple Transfer Example](simple-transfer.md)
 * [Barrier](barrier.md)
 * [Buy Execution](buy-execution.md)
-	* [Teleport Transfer Example](examples/teleport-transfer.md)
-	* [Reserve Transfer Example](examples/reserve-transfer.md)
-		* [Reserve Asset Deposited](examples/reserve-asset-deposited.md)
+* [Reserve Transfer Example](reserve-transfer.md)
+* [Reserve Asset Deposited](reserve-asset-deposited.md)
+* [Teleport Transfer Example](teleport-transfer.md)
 
 ---
 
